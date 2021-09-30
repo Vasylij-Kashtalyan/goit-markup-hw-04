@@ -40,7 +40,6 @@ body {
 a {
   text-decoration: none;
 }
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -110,8 +109,9 @@ a {
 .header-list-info {
   display: flex;
   margin-left: auto;
+  justify-content: center;
+  align-items: center;
 }
-
 .header-item:not(:last-child) {
   margin-right: 50px;
 }
@@ -137,11 +137,29 @@ a {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
   color: var(--primary-text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .info-title:hover,
 .info-title:focus {
   color: var(--accent-color);
+}
+.info-title:hover .icon-info-title,
+.info-title:focus .icon-info-title {
+  fill: var(--accent-color);
+}
+.icon-info-title {
+  display: flex;
+  width: 16px;
+  height: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+
+  fill: var(--primary-text-color);
 }
 /* Герои */
 .hero {
@@ -242,29 +260,22 @@ a {
 .feature-title {
   margin-bottom: 10px;
 }
-.feature-item::before {
-  content: " ";
+.icon-container-feature {
+  display: flex;
+  justify-content: center;
   width: 270px;
   height: 120px;
-  display: block;
-  background-repeat: no-repeat;
-  background-size: 30%;
-  background-position: center;
+
   background-color: var(--filters-background);
   border-radius: 4px;
   margin-bottom: 30px;
 }
-.feature-item:nth-child(1)::before {
-  background-image: url(../images/attention.svg);
-}
-.feature-item:nth-child(2)::before {
-  background-image: url(../images/punctuality.svg);
-}
-.feature-item:nth-child(3)::before {
-  background-image: url(../images/planning.svg);
-}
-.feature-item:nth-child(4)::before {
-  background-image: url(../images/technologies.svg);
+.icon-feature {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 /*  Чем мы занимаемся  */
@@ -339,14 +350,17 @@ a {
 
   background-color: var(--primary-white-color);
 }
-.icon-list {
+
+.social-icon {
   display: flex;
   justify-content: center;
-  outline: 1px solid red;
 }
 .icon-item {
   width: 44px;
   height: 44px;
+}
+.icon-item + .icon-item {
+  margin-left: 10px;
 }
 .icon-link {
   width: 100%;
@@ -361,19 +375,16 @@ a {
 .icon-link:focus {
   background-color: var(--accent-color);
 }
-.icon-link:hover .icon,
-.icon-link:focus .icon {
+.icon-link:hover .icon-team,
+.icon-link:focus .icon-team {
   fill: var(--primary-white-color);
 }
-.icon:hover {
-  fill: #ffffff;
-}
-
-.icon {
+.icon-team {
   width: 20px;
   height: 20px;
-  /* fill: #afb1b8; */
+  fill: #afb1b8;
 }
+
 /* ---------------Футер ------------- */
 .footer {
   padding-top: 60px;
@@ -406,7 +417,62 @@ a {
 .address-container {
   margin-top: 20px;
 }
+.footer-info-title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
 
+  color: var(--primary-text-color);
+}
+.footer-social-join {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+.footer-social {
+  display: flex;
+}
+.footer-social-icon {
+  display: flex;
+  justify-content: center;
+}
+.footer-icon-item {
+  width: 44px;
+  height: 44px;
+}
+.footer-icon-item + .footer-icon-item {
+  margin-left: 10px;
+}
+.footer-icon-link {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-icon-link:hover,
+.footer-icon-link:focus {
+  background-color: var(--accent-color);
+}
+.footer-icon-link:hover .footer-icon-team,
+.footer-icon-link:focus .footer-icon-team {
+  fill: var(--primary-white-color);
+}
+.footer-icon-team {
+  width: 20px;
+  height: 20px;
+  fill: #afb1b8;
+}
 /* ----------------------------Портфоли ------------------ */
 
 .filters-button {
