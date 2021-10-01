@@ -328,6 +328,7 @@ a {
   letter-spacing: 0.03em;
 
   color: var(--primary-text-color);
+  margin-bottom: 16px;
 }
 .team {
   margin-bottom: 50px;
